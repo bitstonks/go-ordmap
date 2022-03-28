@@ -1,0 +1,52 @@
+go test -bench . -benchmem -count=3 avl.go bench_static_test.go generics_builder.go
+goos: darwin
+goarch: amd64
+cpu: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+BenchmarkNodeBuiltin_Insert/small_value-12         	 1000000	      1012 ns/op	    1056 B/op	      22 allocs/op
+BenchmarkNodeBuiltin_Insert/small_value-12         	 1333095	       925.7 ns/op	    1056 B/op	      22 allocs/op
+BenchmarkNodeBuiltin_Insert/small_value-12         	 1329625	       885.7 ns/op	    1056 B/op	      22 allocs/op
+BenchmarkNodeBuiltin_Insert/big_value-12           	 1000000	      1064 ns/op	    2080 B/op	      23 allocs/op
+BenchmarkNodeBuiltin_Insert/big_value-12           	 1000000	      1045 ns/op	    2080 B/op	      23 allocs/op
+BenchmarkNodeBuiltin_Insert/big_value-12           	 1000000	      1088 ns/op	    2080 B/op	      23 allocs/op
+BenchmarkNode_Insert/small_value-12                	  804544	      1394 ns/op	    1792 B/op	      28 allocs/op
+BenchmarkNode_Insert/small_value-12                	  787970	      1382 ns/op	    1792 B/op	      28 allocs/op
+BenchmarkNode_Insert/small_value-12                	  793567	      1327 ns/op	    1792 B/op	      28 allocs/op
+BenchmarkNode_Insert/big_value-12                  	  694713	      1510 ns/op	    2816 B/op	      29 allocs/op
+BenchmarkNode_Insert/big_value-12                  	  689325	      1529 ns/op	    2816 B/op	      29 allocs/op
+BenchmarkNode_Insert/big_value-12                  	  734050	      1450 ns/op	    2816 B/op	      29 allocs/op
+BenchmarkNodeBuiltin_Iterate/small_value-12        	      10	 111130503 ns/op	     960 B/op	       2 allocs/op
+BenchmarkNodeBuiltin_Iterate/small_value-12        	      10	 112079874 ns/op	     960 B/op	       2 allocs/op
+BenchmarkNodeBuiltin_Iterate/small_value-12        	      10	 110768368 ns/op	     960 B/op	       2 allocs/op
+BenchmarkNodeBuiltin_Iterate/big_value-12          	      10	 111814402 ns/op	     960 B/op	       2 allocs/op
+BenchmarkNodeBuiltin_Iterate/big_value-12          	      10	 113435613 ns/op	     960 B/op	       2 allocs/op
+BenchmarkNodeBuiltin_Iterate/big_value-12          	      10	 114676874 ns/op	     960 B/op	       2 allocs/op
+BenchmarkNode_Iterate/small_value-12               	      10	 111448318 ns/op	     416 B/op	       1 allocs/op
+BenchmarkNode_Iterate/small_value-12               	      10	 113058099 ns/op	     416 B/op	       1 allocs/op
+BenchmarkNode_Iterate/small_value-12               	      10	 113208582 ns/op	     416 B/op	       1 allocs/op
+BenchmarkNode_Iterate/big_value-12                 	      10	 118176978 ns/op	     416 B/op	       1 allocs/op
+BenchmarkNode_Iterate/big_value-12                 	      10	 115493919 ns/op	     416 B/op	       1 allocs/op
+BenchmarkNode_Iterate/big_value-12                 	      10	 116434568 ns/op	     416 B/op	       1 allocs/op
+BenchmarkNodeBuiltin_Get/small_value-12            	 6089365	       197.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNodeBuiltin_Get/small_value-12            	 6141693	       197.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNodeBuiltin_Get/small_value-12            	 6100393	       196.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNodeBuiltin_Get/big_value-12              	 6234558	       193.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNodeBuiltin_Get/big_value-12              	 6302655	       194.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNodeBuiltin_Get/big_value-12              	 6235344	       195.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNode_Get/small_value-12                   	 5536665	       219.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNode_Get/small_value-12                   	 5556775	       217.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNode_Get/small_value-12                   	 5539156	       216.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNode_Get/big_value-12                     	 5577850	       217.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNode_Get/big_value-12                     	 5537312	       218.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNode_Get/big_value-12                     	 5589880	       217.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNodeBuiltin_Remove/small_value-12         	 1246554	       992.7 ns/op	     910 B/op	      18 allocs/op
+BenchmarkNodeBuiltin_Remove/small_value-12         	 1264256	       960.2 ns/op	     910 B/op	      18 allocs/op
+BenchmarkNodeBuiltin_Remove/small_value-12         	 1214348	       989.6 ns/op	     910 B/op	      18 allocs/op
+BenchmarkNodeBuiltin_Remove/big_value-12           	 1214101	       978.4 ns/op	     910 B/op	      18 allocs/op
+BenchmarkNodeBuiltin_Remove/big_value-12           	 1208082	       987.9 ns/op	     910 B/op	      18 allocs/op
+BenchmarkNodeBuiltin_Remove/big_value-12           	 1242172	       979.9 ns/op	     910 B/op	      18 allocs/op
+BenchmarkNode_Remove/small_value-12                	  915182	      1201 ns/op	    1283 B/op	      20 allocs/op
+BenchmarkNode_Remove/small_value-12                	  931458	      1163 ns/op	    1282 B/op	      20 allocs/op
+BenchmarkNode_Remove/small_value-12                	  893290	      1133 ns/op	    1283 B/op	      20 allocs/op
+BenchmarkNode_Remove/big_value-12                  	 1056133	      1135 ns/op	    1286 B/op	      20 allocs/op
+BenchmarkNode_Remove/big_value-12                  	  891102	      1130 ns/op	    1283 B/op	      20 allocs/op
+BenchmarkNode_Remove/big_value-12                  	 1076454	      1106 ns/op	    1287 B/op	      20 allocs/op
